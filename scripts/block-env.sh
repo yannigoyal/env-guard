@@ -25,7 +25,7 @@ esac
 cleaned=$(sed -E 's/\.env\.(example|sample|template)//g' <<<"$target")
 
 
-if grep -Eq '(^|[/[:space:]"'\''])\.env(\.[A-Za-z0-9_-]+)?($|[[:space:]"'\'';|&])' <<<"$cleaned"; then
+if grep -Eq '(^|[/[:space:]"'\''<>=(:])\.env(\.[A-Za-z0-9_-]+)?($|[[:space:]"'\'';|&<>)`.*?[])' <<<"$cleaned"; then
  echo "env-guard: blocked access to a .env file. Ask the user for the specific value you need instead." >&2
  exit 2
 fi
