@@ -1,0 +1,13 @@
+{
+ "name": "env-guard",
+ "displayName": "Env Guard",
+ "version": "0.1.0",
+ "description": "Blocks Claude from reading .env files and checks whether any are tracked by git. No network access, no settings changes.",
+ "author": {
+   "name": "Yanni Goyal",
+   "url": "https://github.com/yannigoyal"
+ },
+ "repository": "https://github.com/yannigoyal/env-guard",
+ "license": "MIT",
+ "keywords": ["security", "secrets", "dotenv"]
+}
