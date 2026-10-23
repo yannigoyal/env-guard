@@ -40,6 +40,9 @@ A determined user or a cleverly encoded command can get around it.
 It also blocks some harmless commands, such as `cp .env.example .env`.
 Files you attach yourself with `@` in a prompt are not checked, because
 they don't go through a tool call.
+It only watches the Read and Bash tools. Claude can still write or edit
+a .env file if you allow it.
+
 
 
 ## License
