@@ -1,0 +1,8 @@
+{
+ "name": "yannigoyal-plugins",
+ "description": "Small, readable Claude Code plugins by Yanni Goyal.",
+ "owner": { "name": "Yanni Goyal" },
+ "plugins": [
+   { "name": "env-guard", "source": "./" }
+ ]
+}

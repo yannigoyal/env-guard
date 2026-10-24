@@ -1,5 +1,23 @@
 # env-guard
 
+## Install
+
+
+In Claude Code:
+
+
+```
+/plugin install env-guard --marketplace yannigoyal/env-guard
+```
+
+
+Or from the terminal:
+
+
+```bash
+claude plugin marketplace add yannigoyal/env-guard
+claude plugin install env-guard@yannigoyal-plugins
+```
 
 Stops Claude Code from reading your `.env` files, and checks whether any
 `.env` files are tracked by git in your project.
