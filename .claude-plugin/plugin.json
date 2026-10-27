@@ -1,7 +1,7 @@
 {
  "name": "env-guard",
  "displayName": "Env Guard",
- "version": "0.1.1",
+ "version": "0.1.2",
  "description": "Blocks Claude from reading .env files and checks whether any are tracked by git. No network access, no settings changes.",
  "author": {
    "name": "Yanni Goyal",
