@@ -26,9 +26,9 @@ Stops Claude Code from reading your `.env` files, and checks whether any
 ## What it does
 
 
-- **Hook (PreToolUse on Read and Bash):** before Claude reads a file or runs
- a shell command, `scripts/block-env.sh` checks whether it mentions a `.env`
- file. If it does, the action is blocked and Claude is told why.
+- **Hook (PreToolUse on Read, Bash and Grep):** before Claude reads a file,
+ runs a shell command or searches files, `scripts/block-env.sh` checks whether
+ it mentions a `.env` file. If it does, the action is blocked and Claude is told why.
  `.env.example`, `.env.sample` and `.env.template` are allowed.
 - **Skill (`/env-guard:env-check`):** runs `git ls-files` and reports any
  tracked `.env` files, with steps to untrack them.
@@ -58,8 +58,12 @@ A determined user or a cleverly encoded command can get around it.
 It also blocks some harmless commands, such as `cp .env.example .env`.
 Files you attach yourself with `@` in a prompt are not checked, because
 they don't go through a tool call.
-It only watches the Read and Bash tools. Claude can still write or edit
+It only watches the Read, Bash and Grep tools. Claude can still write or edit
 a .env file if you allow it.
+For Grep, only the search path and glob are checked. A search over a whole
+folder is not blocked, even if that folder contains a .env file.
+Any Bash command that mentions `.env` is blocked, even when it only writes
+the word as text (for example in a commit message or an `echo`).
 
 
 

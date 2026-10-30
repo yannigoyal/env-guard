@@ -17,6 +17,8 @@ tool=$(jq -r '.tool_name // empty' <<<"$input")
 case "$tool" in
  Read) target=$(jq -r '.tool_input.file_path // empty' <<<"$input") ;;
  Bash) target=$(jq -r '.tool_input.command // empty' <<<"$input") ;;
+ # Grep prints matching lines, so a search pointed at a .env file leaks its contents.
+ Grep) target=$(jq -r '[.tool_input.path, .tool_input.glob] | map(select(. != null)) | join(" ")' <<<"$input") ;;
  *)    exit 0 ;;
 esac
 
@@ -25,7 +27,7 @@ esac
 cleaned=$(sed -E 's/\.env\.(example|sample|template)//g' <<<"$target")
 
 
-if grep -Eq '(^|[/[:space:]"'\''<>=(:])\.env(\.[A-Za-z0-9_-]+)?($|[[:space:]"'\'';|&<>)`.*?[])' <<<"$cleaned"; then
+if grep -Eq '(^|[/[:space:]"'\''<>=(:{,])\.env(\.[A-Za-z0-9_-]+)?($|[[:space:]"'\'';|&<>)`.*?[,}])' <<<"$cleaned"; then
  echo "env-guard: blocked access to a .env file. Ask the user for the specific value you need instead." >&2
  exit 2
 fi
