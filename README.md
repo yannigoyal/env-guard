@@ -67,6 +67,11 @@ the word as text (for example in a commit message or an `echo`).
 
 
 
+## Want more protection?
+
+The [Claude Code Safety Kit](https://superprofile.bio/vp/claude-code-safety-kit) adds a plugin vetting checklist and a second guard plugin template for SSH keys, cloud credentials and other secrets.
+
+
 ## License
 
 
