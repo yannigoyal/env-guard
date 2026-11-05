@@ -33,4 +33,13 @@ if grep -Eq '(^|[/[:space:]"'\''<>=(:{,])\.env(\.[A-Za-z0-9_-]+)?($|[[:space:]"'
 fi
 
 
+# Mobile signing keys: Android keystores (.jks, .keystore) and their passwords
+# (key.properties), iOS signing certificates (.p12) and App Store Connect API keys (.p8).
+# Anyone with these can sign and publish an app as you.
+if grep -Eq '(^|[^A-Za-z0-9_])([A-Za-z0-9_.*-]*\.(jks|keystore|p12|p8)|key\.properties)($|[[:space:]"'\'';|&<>)`,}*])' <<<"$target"; then
+ echo "env-guard: blocked access to a signing key file (keystore, key.properties, .p12 or .p8). Ask the user for the specific value you need instead." >&2
+ exit 2
+fi
+
+
 exit 0

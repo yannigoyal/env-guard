@@ -1,13 +1,13 @@
 {
  "name": "env-guard",
  "displayName": "Env Guard",
- "version": "0.1.5",
- "description": "Blocks Claude from reading .env files and checks whether any are tracked by git. No network access, no settings changes.",
+ "version": "0.2.0",
+ "description": "Blocks Claude from reading .env files and mobile signing keys (Android keystores, iOS .p12/.p8), and checks whether any .env files are tracked by git. No network access, no settings changes.",
  "author": {
    "name": "Yanni Goyal",
    "url": "https://github.com/yannigoyal"
  },
  "repository": "https://github.com/yannigoyal/env-guard",
  "license": "MIT",
- "keywords": ["security", "secrets", "dotenv"]
+ "keywords": ["security", "secrets", "dotenv", "android", "ios", "keystore"]
 }
