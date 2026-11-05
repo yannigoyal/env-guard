@@ -19,8 +19,8 @@ claude plugin marketplace add yannigoyal/env-guard
 claude plugin install env-guard@yannigoyal-plugins
 ```
 
-Stops Claude Code from reading your `.env` files, and checks whether any
-`.env` files are tracked by git in your project.
+Stops Claude Code from reading your `.env` files and mobile app signing keys,
+and checks whether any `.env` files are tracked by git in your project.
 
 
 ## What it does
@@ -30,6 +30,11 @@ Stops Claude Code from reading your `.env` files, and checks whether any
  runs a shell command or searches files, `scripts/block-env.sh` checks whether
  it mentions a `.env` file. If it does, the action is blocked and Claude is told why.
  `.env.example`, `.env.sample` and `.env.template` are allowed.
+- **Mobile signing keys (since 0.2.0):** the same hook also blocks Android
+ keystores (`*.jks`, `*.keystore`), `key.properties` (the keystore passwords),
+ iOS signing certificates (`*.p12`) and App Store Connect API keys (`*.p8`).
+ Anyone with these can sign and publish an app as you.
+ Thanks to Tejasvi Raj for the suggestion.
 - **Skill (`/env-guard:env-check`):** runs `git ls-files` and reports any
  tracked `.env` files, with steps to untrack them.
 
@@ -64,6 +69,10 @@ For Grep, only the search path and glob are checked. A search over a whole
 folder is not blocked, even if that folder contains a .env file.
 Any Bash command that mentions `.env` is blocked, even when it only writes
 the word as text (for example in a commit message or an `echo`).
+The same applies to signing key names: a command such as `keytool -list -keystore upload.jks`
+is blocked too, so run commands that need your keystore yourself.
+Provisioning profiles (`.mobileprovision`) and public certificates (`.cer`)
+are not blocked, because they don't contain private keys.
 
 
 
