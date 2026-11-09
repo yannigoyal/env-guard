@@ -1,5 +1,7 @@
 # env-guard
 
+[![HOL verified publisher](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dyannigoyal%252Fenv-guard%26metric%3Dpublisher%26style%3Dflat)](https://hol.org/registry/plugins/yannigoyal%2Fenv-guard) [![HOL trust score](https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dyannigoyal%252Fenv-guard%26metric%3Dtrust%26style%3Dflat)](https://hol.org/registry/plugins/yannigoyal%2Fenv-guard)
+
 ## Install
 
 
