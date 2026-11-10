@@ -78,7 +78,7 @@ are not blocked, because they don't contain private keys.
 
 ## Want more protection?
 
-The [Claude Code Safety Kit](https://superprofile.bio/vp/claude-code-safety-kit) adds a plugin vetting checklist and a second guard plugin template for SSH keys, cloud credentials and other secrets.
+The [Plugin Vetting Checklist](https://creatly.me/yanni-goyal/p/plugin-checklist) (₹99, one-page PDF) gives you the six questions I run before installing any Claude Code plugin: who published it, whether it is pinned, what its hooks really do, and more.
 
 Want to see how this plugin was built, step by step, and how to check any plugin before you install it? It is the main project in my course Claude Code Plugins: Vet, Install & Build Them Safely (https://creatly.me/yanni-goyal/p/claude-code-plugins).
 
