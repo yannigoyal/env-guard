@@ -80,7 +80,7 @@ are not blocked, because they don't contain private keys.
 
 The [Claude Code Safety Kit](https://superprofile.bio/vp/claude-code-safety-kit) adds a plugin vetting checklist and a second guard plugin template for SSH keys, cloud credentials and other secrets.
 
-Want to see how this plugin was built, step by step, and how to check any plugin before you install it? It is the main project in my course Claude Code Plugins: Vet, Install & Build Them Safely (https://superprofile.bio/course/claude-code-plugins-course).
+Want to see how this plugin was built, step by step, and how to check any plugin before you install it? It is the main project in my course Claude Code Plugins: Vet, Install & Build Them Safely (https://creatly.me/yanni-goyal/p/claude-code-plugins).
 
 ## License
 
